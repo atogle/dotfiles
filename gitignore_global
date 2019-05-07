@@ -38,15 +38,3 @@ Thumbs.db
 #################
 .vagrant
 Vagrantfile
-
-# Coveralls #
-#############
-.coveralls.yml
-
-# Rubinius files #
-##################
-.rbx
-
-# Crystal files #
-##################
-.crystal
