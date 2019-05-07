@@ -1,3 +1,0 @@
-function irb
-  pry
-end
