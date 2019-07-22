@@ -7,3 +7,4 @@ set -x PATH /usr/local/sbin $PATH
 set -x PATH $HOME/bin $PATH
 
 source ~/.iterm2_shell_integration.(basename $SHELL)
+status --is-interactive; and source (rbenv init -|psub)
