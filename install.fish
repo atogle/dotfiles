@@ -1,6 +1,6 @@
 #!/usr/bin/env fish
 
-set exclude_us README.md LICENSE.md fish
+set exclude_us README.md LICENSE.md install.fish fish
 
 echo Installing all dotfiles into $USER\'s home directory...
 for file in *
