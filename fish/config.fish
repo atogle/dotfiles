@@ -32,3 +32,9 @@ abbr -a gpo 'git push origin'
 # Other useful abbreviations
 abbr -a ll '/bin/ls -AFGHhl'
 abbr -a brewup 'brew update; brew upgrade; brew cleanup'
+abbr -a p 'cd ~/Projects'
+abbr -a ls '/bin/ls -FGH'
+abbr -a vi 'vim'
+abbr -a mkdir 'command mkdir -p'
+abbr -a clean 'find . -name'
+# Removed fix_open_with abbreviation as it's rarely needed and there are more user-friendly alternatives in modern macOS
