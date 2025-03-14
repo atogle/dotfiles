@@ -22,3 +22,7 @@ echo $NODE_PATH
 # Try to use an abbreviation (this won't work in a script, but we can check if it's defined)
 echo -e "\nAbbreviation expansions:"
 abbr -s
+
+# Check which functions remain
+echo -e "\nRemaining functions:"
+ls -1 fish/functions/
