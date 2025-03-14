@@ -37,4 +37,3 @@ abbr -a ls '/bin/ls -FGH'
 abbr -a vi 'vim'
 abbr -a mkdir 'command mkdir -p'
 abbr -a clean 'find . -name'
-# Removed fix_open_with abbreviation as it's rarely needed and there are more user-friendly alternatives in modern macOS
