@@ -3,9 +3,10 @@
 # Ensure we are in the directory of the script to get absolute paths correct
 cd (dirname (status -f))
 set DOTFILES (pwd)
-set exclude_us README.md LICENSE.md install.fish fish .git .DS_Store
+set exclude_us README.md LICENSE.md install.fish test_config.fish fish .git .DS_Store .gitignore
 
 echo Installing all dotfiles into $USER\'s home directory...
+echo "(Existing files will be overwritten)"
 for file in $DOTFILES/*
     set filename (basename $file)
     if not contains $filename $exclude_us
