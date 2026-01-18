@@ -55,12 +55,7 @@ end
 
 echo
 echo "✓ Installation complete!"
-
-# Reload Fish config if we're in an interactive Fish shell
-if status is-interactive
-    echo "Reloading Fish configuration..."
-    source ~/.config/fish/config.fish
-    echo "✓ Configuration reloaded"
-else
-    echo "  Run 'source ~/.config/fish/config.fish' to reload your config"
-end
+echo
+echo "Reloading Fish configuration..."
+source ~/.config/fish/config.fish
+echo "✓ Configuration reloaded - all abbreviations and settings are now active!"
