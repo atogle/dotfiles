@@ -1,8 +1,5 @@
 # Default editor
-set -x EDITOR (command -s vim)
-
-# Node path
-set -x NODE_PATH /usr/local/lib/node_modules
+set -x EDITOR vim
 
 # PATH manipulation using Fish 4.0 path variable type
 fish_add_path /usr/local/bin
@@ -19,23 +16,22 @@ if status is-interactive
     set -g fish_greeting ''
 
     # Git abbreviations (faster and more flexible than aliases)
-    abbr --add ga 'git add'
-    abbr --add gs 'git status'
-    abbr --add gb 'git branch'
-    abbr --add gca 'git commit -a'
-    abbr --add gcm 'git commit -m'
-    abbr --add gco 'git checkout'
-    abbr --add gd 'git diff'
-    abbr --add gl 'git log'
-    abbr --add gp 'git push'
-    abbr --add gpo 'git push origin'
+    abbr --add-global ga 'git add'
+    abbr --add-global gs 'git status'
+    abbr --add-global gb 'git branch'
+    abbr --add-global gca 'git commit -a'
+    abbr --add-global gcm 'git commit -m'
+    abbr --add-global gco 'git checkout'
+    abbr --add-global gd 'git diff'
+    abbr --add-global gl 'git log'
+    abbr --add-global gp 'git push'
+    abbr --add-global gpo 'git push origin'
 
     # Other useful abbreviations
-    abbr --add ll '/bin/ls -AFGHhl'
-    abbr --add brewup 'brew update; brew upgrade; brew cleanup'
-    abbr --add p 'cd ~/Projects'
-    abbr --add ls '/bin/ls -FGH'
-    abbr --add vi 'vim'
-    abbr --add mkdir 'command mkdir -p'
-    abbr --add clean 'find . -name'
+    abbr --add-global ll '/bin/ls -AFGHhl'
+    abbr --add-global brewup 'brew update; brew upgrade; brew cleanup'
+    abbr --add-global p 'cd ~/Projects'
+    abbr --add-global ls '/bin/ls -FGH'
+    abbr --add-global vi 'vim'
+    abbr --add-global mkdir 'command mkdir -p'
 end
