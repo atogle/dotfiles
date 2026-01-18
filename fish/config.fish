@@ -1,5 +1,5 @@
-# Default editor
-set -x EDITOR vim
+# Default editor (VSCode with wait flag for Git operations)
+set -x EDITOR "code --wait"
 
 # PATH manipulation using Fish 4.0 path variable type
 fish_add_path /usr/local/bin
@@ -32,6 +32,5 @@ if status is-interactive
     abbr --add-global brewup 'brew update; brew upgrade; brew cleanup'
     abbr --add-global p 'cd ~/Projects'
     abbr --add-global ls '/bin/ls -FGH'
-    abbr --add-global vi 'vim'
     abbr --add-global mkdir 'command mkdir -p'
 end

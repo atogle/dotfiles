@@ -1,6 +1,10 @@
 [user]
   email = atogle@gmail.com
   name = Aaron Ogle
+[init]
+  defaultBranch = main
+[pull]
+  rebase = true
 [gist]
   browse = true
   private = true
@@ -32,13 +36,20 @@
   excludesfile = ~/.gitignore_global
   quotepath = false
   whitespace = trailing-space,space-before-tab
+  editor = code --wait
 [push]
-  default = simple
+  default = current
 [branch]
   autosetuprebase = always
 [help]
   autocorrect = 1
 [diff]
   mnemonicprefix = true
-[vain]
-  default = eeee
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+  tool = vscode
+  conflictstyle = zdiff3
+[mergetool "vscode"]
+  cmd = code --wait $MERGED
