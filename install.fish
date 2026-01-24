@@ -26,10 +26,14 @@ for file in $DOTFILES/*
     end
 end
 
-# Claude Code global instructions
+# AI assistant global instructions
 echo CLAUDE.md
 mkdir -p ~/.claude
 ln -f -s $DOTFILES/CLAUDE.md ~/.claude/CLAUDE.md
+
+echo "GEMINI.md (symlink to CLAUDE.md)"
+mkdir -p ~/.gemini
+ln -f -s $DOTFILES/CLAUDE.md ~/.gemini/GEMINI.md
 
 echo
 echo "=== Fish Shell ==="
