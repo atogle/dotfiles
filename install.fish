@@ -3,11 +3,21 @@
 # Ensure we are in the directory of the script to get absolute paths correct
 cd (dirname (status -f))
 set DOTFILES (pwd)
-set exclude_us README.md LICENSE.md install.fish test_config.fish fish .git .DS_Store .gitignore
+set exclude_us README.md LICENSE.md install.fish test_config.fish fish .git .DS_Store .gitignore Brewfile CLAUDE.md
 
-echo "Installing all dotfiles into $USER's home directory..."
+echo "Installing dotfiles for $USER..."
 echo "(Existing files will be overwritten)"
 echo
+
+# Brewfile first - installs Fish and other dependencies
+echo "=== Homebrew Packages ==="
+echo Brewfile
+ln -f -s $DOTFILES/Brewfile ~/.Brewfile
+echo "Running brew bundle to install packages..."
+brew bundle install --global
+echo
+
+echo "=== Dotfiles ==="
 for file in $DOTFILES/*
     set filename (basename $file)
     if not contains $filename $exclude_us
@@ -16,6 +26,17 @@ for file in $DOTFILES/*
     end
 end
 
+# AI assistant global instructions
+echo CLAUDE.md
+mkdir -p ~/.claude
+ln -f -s $DOTFILES/CLAUDE.md ~/.claude/CLAUDE.md
+
+echo "GEMINI.md (symlink to CLAUDE.md)"
+mkdir -p ~/.gemini
+ln -f -s $DOTFILES/CLAUDE.md ~/.gemini/GEMINI.md
+
+echo
+echo "=== Fish Shell ==="
 echo fish/config.fish
 ln -f -s $DOTFILES/fish/config.fish ~/.config/fish/config.fish
 echo fish/functions
@@ -30,7 +51,7 @@ for func in $DOTFILES/fish/functions/*.fish
 end
 
 echo
-echo "Setting up Fish as default shell..."
+echo "=== Default Shell ==="
 
 # Get the path to Fish
 set FISH_PATH (which fish)
@@ -54,6 +75,7 @@ else
 end
 
 echo
+echo "=== Complete ==="
 echo "✓ Installation complete!"
 echo
 echo "Reloading Fish configuration..."
